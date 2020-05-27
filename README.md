@@ -1,0 +1,2 @@
+# javacode
+test for class
