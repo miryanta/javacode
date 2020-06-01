@@ -9,7 +9,7 @@ public class StudentScore {
 		//		학생별 총점 / 평균
 		//		전체 학생의 과목당 총점 평균
 		Scanner scan = new Scanner(System.in);
-		
+
 		int n;
 		int i=0;
 		int j=0;
@@ -34,8 +34,8 @@ public class StudentScore {
 			System.out.println("---------------------");
 			//		1. 점수 입력 2.학생별 총점 3.전체학생 과목별 총점 평균 4.종료
 			input = scan.next();
-			
-			
+
+
 			if(input.equals("1"))
 			{
 				for(i=0; i<score.length; i++) // 점수 입력
@@ -61,17 +61,20 @@ public class StudentScore {
 				System.out.println("몇 번 학생의 점수를 불러오시겠습니까?(1~"+score.length+")");
 				n = scan.nextInt();
 				// n번 학생의 총점을 불러낸다.
-				for(j=0; j<score[n].length; j++)
+				if(n>=1 && n<=score.length);
 				{
-					sum1 = sum1 + score[n][j];
+					for(j=0; j<score[n].length; j++)
+					{
+						sum1 = sum1 + score[n][j];
+					}
+					average1 = (double)(sum1) / score[n].length;
+					System.out.println(n + "번 학생의 ");
+					System.out.println("점수 총합은 " + sum1 + "이고");
+					System.out.println("점수 평균은 " + average1 + "입니다.\n");
+
+					sum1=0;
+					average1=0.0;
 				}
-				average1 = (double)(sum1) / score[n].length;
-				System.out.println(n + "번 학생의 ");
-				System.out.println("점수 총합은 " + sum1 + "이고");
-				System.out.println("점수 평균은 " + average1 + "입니다.\n");
-				
-				sum1=0;
-				average1=0.0;
 			}
 
 			// 전체 학생의 과목별 점수 평균
